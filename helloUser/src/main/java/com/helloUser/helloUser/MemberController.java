@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -41,4 +42,11 @@ public class MemberController {
         return "redirect:/newMemberForm";
     }
 
+    // Ändra så att medlemmarna får ett ID? Blir problem om folk har samma namn nu
+    @GetMapping("/removeMember/{memberName}")
+    String removeMember(@PathVariable String memberName) {
+        System.out.println("Ta bort: " + memberName);
+        HelloUserApplication.secretClub.members.removeIf(member -> member.getName().equals(memberName));
+        return "redirect:/members";
+    }
 }

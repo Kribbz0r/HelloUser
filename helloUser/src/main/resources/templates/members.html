@@ -39,9 +39,10 @@
 
     <!-- Lista med medlemmar. Namn och ålder skrivs ut. Bara admin ser e-post -->
     <ul>
-        <li th:each="member : ${members}">
+        <li th:id="${member.name}" th:each="member : ${members}">
             <span th:text="${member.name}"></span>
             <span th:text="${member.age}"></span>
+            <a th:href="@{/removeMember/{memberName}(memberName=${member.name})}">[Ta bort]</a>
         </li>
     </ul>
 
