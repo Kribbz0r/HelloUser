@@ -15,19 +15,40 @@
 
 
 <!--****************************************************************************** -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-<!-- Överskrift. Vänsterställd -->
-<h1>Här är en överskrift</h1>
-<!-- Återgå till index-länk på samma rad. Högerställd -->
-<a href="/">Startsida</a>
+<body>
 
-<!-- Fält för namn-->
+    <!-- Överskrift. Vänsterställd -->
+    <h1>Här är en överskrift</h1>
+    <!-- Återgå till index-länk på samma rad. Högerställd -->
+    <a href="/">Startsida</a><br><br>
 
-<!-- Fält för e-post -->
+    <div>
+        <form method="post" th:action="@{/newMemberForm}" th:object="${newMember}">
+            <!-- Fält för namn-->
+            <span>Namn: </span><br>
+            <input type="text" th:field="*{name}"><br>
+            <!-- Fält för e-post -->
+            <span>E-post: </span><br>
+            <input type="text" th:field="*{eMail}"><br>
+            <!-- Fält för ålder -->
+            <span>Ålder: </span><br>
+            <input type="text" th:field="*{age}"><br>
+            <!-- Check box för admin-->
+            <span>Gör till admin </span>
+            <input type="checkbox" th:field="*{admin}"><br>
+            <!-- Knapp för att skapa användare-->
+            <input type="submit"></input>
+        </form>
+    </div>
+</body>
 
-<!-- Fält för ålder -->
-
-<!-- Check box för admin-->
-
-<!-- Knapp för att skapa användare-->
+</html>

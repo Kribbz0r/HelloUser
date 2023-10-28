@@ -9,6 +9,7 @@ public class SecretClub {
     SecretClub(String clubName) {
         this.clubName = clubName;
         this.members = new ArrayList<>();
+        addDefaultMembers();
     }
 
     // Metod för att lägga till ny medlem

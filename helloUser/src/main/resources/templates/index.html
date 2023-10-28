@@ -1,6 +1,6 @@
 <!-- Startsida med länkar till de andra sidorna -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -26,15 +26,15 @@
     <br>
 
     <!-- h3 som frågar om användaren är admin-->
-    <h3>Inlog för admin</h3>
     <!-- Fält som ber om admins namn (admin)-->
-    <label>Användarnamn</label><br>
-    <input type="text"><br>
     <!-- Fält som ber om lösenord (admin)-->
-    <label>Lösenord</label><br>
-    <input type="password"><br>
     <!-- Knapp för att skicka förfrågan till back end och kollar om det verkligen är en admin-->
-    <button> Log in</button>
+    <!-- <h3>Inlog för admin</h3>   *********************************************************************************
+
+    <input type="text" th:field="*{adminName}"><br>
+    <label>Lösenord</label><br>
+    <input type="text" th:field="*{adminPassword}"><br>
+    <button th:field="*{userName}"> Log in</button> -->
 
     <!-- Är båda fälten ifylda rätt genereras en "cookie" vid knapptryck som ger en adminrättigheter-->
 
