@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -26,9 +27,13 @@
     <br>
 
     <!-- h3 som frågar om användaren är admin-->
+    <h3>Inlog för Admin</h3>
     <!-- Fält som ber om admins namn (admin)-->
+    <input type="text" id="adminUsername">
     <!-- Fält som ber om lösenord (admin)-->
+    <input type="text" id="adminPassword">
     <!-- Knapp för att skicka förfrågan till back end och kollar om det verkligen är en admin-->
+    <button id="adminBtn">Log in</button>
     <!-- <h3>Inlog för admin</h3>   *********************************************************************************
 
     <input type="text" th:field="*{adminName}"><br>
