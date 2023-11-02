@@ -22,6 +22,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="members.js" defer></script>
+
 </head>
 
 <body>
@@ -31,24 +33,25 @@
     <!-- Återgå till index-länk på samma rad. Högerställd -->
     <a href="/">Startsida</a><br><br>
 
-    <div>
+    <div class="adminRights">
         <form method="post" th:action="@{/newMemberForm}" th:object="${newMember}">
             <!-- Fält för namn-->
             <span>Namn: </span><br>
-            <input type="text" th:field="*{name}"><br>
+            <input required minlength=1 type="text" th:field="*{name}"><br>
             <!-- Fält för e-post -->
             <span>E-post: </span><br>
-            <input type="text" th:field="*{eMail}"><br>
+            <input required minlength=1 type="email" th:field="*{eMail}"><br>
             <!-- Fält för ålder -->
             <span>Ålder: </span><br>
-            <input type="text" th:field="*{age}"><br>
-            <!-- Check box för admin-->
-            <span>Gör till admin </span>
-            <input type="checkbox" th:field="*{admin}"><br>
+            <input required min=0 max=200 type="number" th:field="*{age}"><br>
             <!-- Knapp för att skapa användare-->
             <input type="submit"></input>
         </form>
     </div>
+
+
+
+
 </body>
 
 </html>

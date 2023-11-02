@@ -10,7 +10,6 @@ public class HelloUserApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloUserApplication.class, args);
-		// Lägg till default members
 
 	}
 }

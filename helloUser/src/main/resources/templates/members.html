@@ -28,6 +28,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="members.js" defer></script>
+
 </head>
 
 <body>
@@ -39,19 +41,13 @@
 
     <!-- Lista med medlemmar. Namn och ålder skrivs ut. Bara admin ser e-post -->
     <ul>
-        <li th:id="${member.name}" th:each="member : ${members}">
+        <li th:id="${member.id}" th:each="member : ${members}">
             <span th:text="${member.name}"></span>
             <span th:text="${member.age}"></span>
-            <a th:href="@{/removeMember/{memberName}(memberName=${member.name})}">[Ta bort]</a>
+            <span class="adminRights"><a th:href="@{/removeMember/{memberId}(memberId=${member.id})}">[Ta
+                    bort]</a></span>
         </li>
     </ul>
-
-    <!-- En h3 där det frågas vilken medlem som ska tas bort -->
-    <h3>Vilken medlem ska bort?</h3>
-    <!-- Fält där ett namn skrivs in -->
-    <input id="removeMemberTextbox" type="text">
-    <!-- Knapp som tar bort medlemmen-->
-    <button id="removeMemberBtn">Ta bort</button>
 </body>
 
 </html>

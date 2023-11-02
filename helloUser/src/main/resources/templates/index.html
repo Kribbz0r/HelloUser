@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>index</title>
     <script src="script.js" defer></script>
 </head>
 
@@ -19,29 +19,24 @@
 
 
     <!-- Länk till sidan med formuläret -->
-    <a href="/newMemberForm">Lägg till medlem</a>
+    <a class="adminRights" href="/newMemberForm">Lägg till medlem</a>
 
     <!--Fel praxis. *****ÄNDRA***** -->
     <br>
     <br>
     <br>
+    <div>
+        <!-- h3 som frågar om användaren är admin-->
+        <h3>Inlog för Admin</h3>
+        <!-- Fält som ber om admins namn (admin)-->
+        <input type="text" id="adminUsername" placeholder="Användarnamn"><br>
+        <!-- Fält som ber om lösenord (admin)-->
+        <input type="text" id="adminPassword" placeholder="Lösenord">
+        <!-- Knapp för att skicka förfrågan till back end och kollar om det verkligen är en admin-->
+        <button id="adminBtn">Log in</button><br><br><br>
+    </div>
+    <button id="clearLocalStorage">Logga ut</button>
 
-    <!-- h3 som frågar om användaren är admin-->
-    <h3>Inlog för Admin</h3>
-    <!-- Fält som ber om admins namn (admin)-->
-    <input type="text" id="adminUsername">
-    <!-- Fält som ber om lösenord (admin)-->
-    <input type="text" id="adminPassword">
-    <!-- Knapp för att skicka förfrågan till back end och kollar om det verkligen är en admin-->
-    <button id="adminBtn">Log in</button>
-    <!-- <h3>Inlog för admin</h3>   *********************************************************************************
-
-    <input type="text" th:field="*{adminName}"><br>
-    <label>Lösenord</label><br>
-    <input type="text" th:field="*{adminPassword}"><br>
-    <button th:field="*{userName}"> Log in</button> -->
-
-    <!-- Är båda fälten ifylda rätt genereras en "cookie" vid knapptryck som ger en adminrättigheter-->
 
 </body>
 
