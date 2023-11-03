@@ -1,7 +1,5 @@
 package com.helloUser.helloUser;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
@@ -34,7 +32,6 @@ public class MemberController {
     @PostMapping("/newMemberForm")
     String newMemberForm(@RequestParam("name") String name, @RequestParam("eMail") String eMail,
             @RequestParam("age") int age) {
-        System.out.println("PostMapping" + name + " " + eMail + " " + age + " ");
         HelloUserApplication.secretClub.members
                 .add(new Member(name, eMail, age, UUID.randomUUID()));
         return "redirect:/newMemberForm";
@@ -42,7 +39,6 @@ public class MemberController {
 
     @GetMapping("/removeMember/{memberId}")
     String removeMember(@PathVariable("memberId") UUID id) {
-        System.out.println("Ta bort: " + id);
         HelloUserApplication.secretClub.members.removeIf(member -> member.getId().equals(id));
         return "redirect:/members";
     }
