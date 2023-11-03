@@ -1,20 +1,3 @@
-<!-- Här ska det gå att lägga till nya medlemmar -->
-<!-- Varje ny medlem ska ha ett namn, en epost, en ålder och en bool om den är admin eller ej. -->
-
-
-<!-- ***** För VG ***** -->
-<!-- Bara Admin ska komma åt formuläret -->
-
-
-
-<!-- Tre fält på en rad. Fält ett ber om den nya medlemmens namn. Det andra fältet ber om medlemmens e-post.
- Det tredje fältet bet om medlemmens ålder. Under fälten finns en ruta där man klickar i om medlemmen är admin och en knapp för att skapa medlemmen. 
- Alla fält måste vara ifyllda. Om medlemen är admin kommer det bara att gå att se i koden. Inga funktioner kommer att läggas till på den nya admin. -->
-
-
-
-
-<!--****************************************************************************** -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.thymeleaf.org">
 
@@ -23,35 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="members.js" defer></script>
-
 </head>
 
 <body>
-
-    <!-- Överskrift. Vänsterställd -->
-    <h1>Här är en överskrift</h1>
-    <!-- Återgå till index-länk på samma rad. Högerställd -->
+    <h1>Barnarps Förenade Fågelskådare</h1>
+    <h3>Adminvy</h3>
     <a href="/">Startsida</a><br><br>
+    <h3 class="adminRights">Ny medlem</h3>
+
 
     <div class="adminRights">
         <form method="post" th:action="@{/newMemberForm}" th:object="${newMember}">
-            <!-- Fält för namn-->
             <span>Namn: </span><br>
             <input required minlength=1 type="text" th:field="*{name}"><br>
-            <!-- Fält för e-post -->
             <span>E-post: </span><br>
             <input required minlength=1 type="email" th:field="*{eMail}"><br>
-            <!-- Fält för ålder -->
             <span>Ålder: </span><br>
             <input required min=0 max=200 type="number" th:field="*{age}"><br>
-            <!-- Knapp för att skapa användare-->
             <input type="submit"></input>
         </form>
     </div>
-
-
-
-
 </body>
 
 </html>

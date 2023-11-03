@@ -16,15 +16,12 @@ public class MemberController {
 
     @GetMapping("/")
     String getIndex() {
-        // Controller som kontrollerrar om admin
         return "index";
     }
 
     @GetMapping("/members")
     String getMembers(Model model) {
-        // Controller som visar medlemmar
         model.addAttribute("members", HelloUserApplication.secretClub.members);
-        // Controller som tar bort medlemmar
         return "members";
     }
 
@@ -38,13 +35,11 @@ public class MemberController {
     String newMemberForm(@RequestParam("name") String name, @RequestParam("eMail") String eMail,
             @RequestParam("age") int age) {
         System.out.println("PostMapping" + name + " " + eMail + " " + age + " ");
-        // Controller som lägger till medlemmar
         HelloUserApplication.secretClub.members
                 .add(new Member(name, eMail, age, UUID.randomUUID()));
         return "redirect:/newMemberForm";
     }
 
-    // Ändra så att medlemmarna får ett ID? Blir problem om folk har samma namn nu
     @GetMapping("/removeMember/{memberId}")
     String removeMember(@PathVariable("memberId") UUID id) {
         System.out.println("Ta bort: " + id);

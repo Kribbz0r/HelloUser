@@ -1,26 +1,3 @@
-<!-- ******För Godkänt ******* -->
-
-<!-- Sida där medlemmar visas -->
-<!-- Lista med medlemar. Listan anropas från back end -->
-<!-- Det ska gå att ta bort en medlem -->
-
-
-<!-- Fält under listan där medlemmens namn matas in -->
-<!-- Knapp bredvid fältet som tar bort medlemmen -->
-<!-- Möjligt fel: Medlemmar med samma namn kommer skapa en bug -->
-
-
-
-
-<!-- ******* För VG ********* -->
-<!-- Bara inloggad admin ska kunna ta bort medlemmar -->
-
-<!-- LocalStorage ska kollas och om Admin är inloggad ska fältet och knappen för borttagande av medlem synas. Annars är det osynlig -->
-<!-- Fältet och knappen ska anropas från back end och inte gömt i JS -->
-
-
-<!-- **************************************************************************************** -->
-
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.thymeleaf.org">
 
@@ -33,13 +10,10 @@
 </head>
 
 <body>
-    <!-- Överskrift. Vänsterställd -->
-    <h1>annan test</h1>
-    <!-- Återgå till index-länk på samma rad. Högerställd -->
+    <h1>Barnarps Förenade Fågelskådare</h1>
+    <h3>Medlemmar</h3>
     <a href="/">Startsida</a>
 
-
-    <!-- Lista med medlemmar. Namn och ålder skrivs ut. Bara admin ser e-post -->
     <ul>
         <li th:id="${member.id}" th:each="member : ${members}">
             <span th:text="${member.name}"></span>
